@@ -1,7 +1,12 @@
-N = int(input())              
-numbers = list(map(int, input().split()))   
+s = input()
+result = ""
 
-minimum = min(numbers)       
-maximum = max(numbers)       
+for ch in s:
+    if 'A' <= ch <= 'Z':       
+        result += chr(ord(ch) + 32)
+    elif 'a' <= ch <= 'z':      
+        result += chr(ord(ch) - 32)
+    else:
+        result += ch          
 
-print(minimum, maximum)       
+print(result)

@@ -1,12 +1,12 @@
-s = input()
-result = ""
+n = int(input())
+times = list(map(int, input().split()))
+times.sort()
 
-for ch in s:
-    if 'A' <= ch <= 'Z':       
-        result += chr(ord(ch) + 32)
-    elif 'a' <= ch <= 'z':      
-        result += chr(ord(ch) - 32)
-    else:
-        result += ch          
+total = 0 
+prefix = 0
 
-print(result)
+for t in times:
+    prefix += t
+    total += prefix
+
+print(total)

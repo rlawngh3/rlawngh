@@ -1,9 +1,10 @@
-N = int(input())        
-numbers = input()      
+x = int(input())
 
-total = 0               
+line = 1
+while x > line:
+    x -= line
+    line += 1
 
-for ch in numbers:   
-    total += int(ch)    
+top, bottom = (x, line - x + 1) if line % 2 == 0 else (line - x + 1, x)
 
-print(total)           
+print(f"{top}/{bottom}")

@@ -1,10 +1,11 @@
-x = int(input())
-
-line = 1
-while x > line:
-    x -= line
-    line += 1
-
-top, bottom = (x, line - x + 1) if line % 2 == 0 else (line - x + 1, x)
-
-print(f"{top}/{bottom}")
+s=input()
+r=""
+i=0
+while i<len(s):
+    if i+1<len(s) and s[i:i+2]=="XX":
+        r+="AAAA" if (i+2<len(s) and s[i+2]=="X") else "BB"
+        i+=2
+    else:
+        r+=s[i]
+        i+=1
+print(-1 if "X" in r else r)
